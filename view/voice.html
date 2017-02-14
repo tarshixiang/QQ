@@ -1,0 +1,27 @@
+  <ul class="list list-borderless  box-margin card" ng-repeat="item in foolerlist">
+            <li class="item item-avatar-left">
+                <img ng-src="{{ item.profile_image }}" alt="加载中...">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.create_time }}</p>
+            </li>
+            <li style="text-align: center;" class="item item-text-wrap u-color-262829">
+                <p style="font-size: 12px;" ng-bind-html="item.text"></p>
+            </li>
+            <li class="item   item-image">
+            	<img ng-src="{{ item.image3 }}" alt="加载中..."/>
+
+            </li>
+            <li class=" item">
+            	<audio style="height: 40px;width: 100%" preload="false" ng-src="{{getsrc(item.voice_uri)}}" controls=""  name="media"></audio>
+            </li>
+            <li class="item item-light padding-left padding-right row">
+                <button class="col button button-small button-positive button-clear icon icon-left ion-thumbsup">{{ item.love }}</button>
+                <button class="col button button-small button-positive button-clear icon icon-left ion-thumbsdown">{{ item.hate }}</button>
+                <button class="col button button-small button-positive button-clear icon icon-left ion-share">0</button>
+                <button class="col button button-small button-positive button-clear icon icon-left ion-chatbox">0</button>
+            </li>
+
+             
+        </ul>
+        
+      

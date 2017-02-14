@@ -1,0 +1,19 @@
+<ul class="list list-borderless  box-margin card" ng-repeat="item in foolerlist">
+    <li class="item item-avatar-left">
+        <img ng-src="{{ item.profile_image }}" alt="">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.create_time }}</p>
+    </li>
+    <li class="item">
+    	<img src="{{item.image0}}" alt="加载中..." />
+    </li>
+    <li class="item item-text-wrap u-color-262829">
+        <a href="{{item.weixin_url}}">{{item.text}}</a>
+    </li>
+    <li class="item item-light padding-left padding-right row">
+         <button class="col button button-small button-positive button-clear icon icon-left ion-thumbsup">{{ item.love }}</button>
+         <button class="col button button-small button-positive button-clear icon icon-left ion-thumbsdown">{{ item.hate }}</button>
+         <button class="col button button-small button-positive button-clear icon icon-left ion-share">0</button>
+         <button class="col button button-small button-positive button-clear icon icon-left ion-chatbox">0</button>
+     </li>
+</ul>

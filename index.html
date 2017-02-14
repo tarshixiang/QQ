@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>圈圈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="lib/css/ionic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+
+    
+    <ion-header-bar class="bar-assertive">
+        
+       
+        <h1 style="font-style:'黑体';font-weight: bold;" class="title"> <i  class=" ico ion-music-note"></i>圈圈-DV</h1>
+       
+    </ion-header-bar>
+    
+    <div class="tabs-striped tabs-color-assertive tabs-top">
+        <div class="tabs">
+            <a class="tab-item" ng-click="change($index);" ng-repeat="btn in tabBtns" ng-class="{'active':btn.isOk}">{{btn.name}}</a>
+           
+        </div>
+    </div>
+    
+
+    <ion-content class="g-main has-tabs-top">
+         
+       <div ng-view></div>
+        
+
+    <ion-infinite-scroll ng-if="isload" on-infinite="LoadMore()" ></ion-infinite-scroll>
+
+
+
+        <ul class="list">
+            <li class="item row">
+                <a href="javascript:;" class="col u-text">第</a>
+
+                <a href="javascript:;" class="col u-btn button button-small {{key == currentPage ? 'button-assertive' : '' }}" ng-repeat="key in pagenum" ng-click="jump(key)">{{ key }}</a>
+                
+                <a href="javascript:;" class="col u-btn u-text">页</a>
+            </li>
+            <li class="item">
+                <button class="button button-block button-assertive" ng-click="nextpage()" ng-class="{flag:disabled}">下一页》</button>
+            </li>
+        </ul>
+       
+    
+
+    </ion-content>
+
+    
+
+
+    <script src="lib/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+     <script type="text/javascript" src="js/angular-sanitize.min.js"></script>
+    <script src="js/app1.js"></script>
+    <script src="js/service.js"></script>
+
+</body>
+</html>
